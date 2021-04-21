@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Extract colors from image</string>
+    <string name="title_text_color">Title text color</string>
+    <string name="body_text_color">Body text color</string>
+</resources>
