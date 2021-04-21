@@ -135,12 +135,12 @@ class MainActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
                                 includeBinding.vibrantSwatchCV.setCardBackgroundColor(vibrantSwatch.rgb)
 
                                 includeBinding.vibrantSwatch.text =
-                                    "Vibrant Swatch : ${vibrantSwatch.rgb}"
+                                    "Vibrant Swatch : ${vibrantSwatch.rgb.convertToHexString()}"
 
                                 includeBinding.vibrantSwatchTitleTV.text =
-                                    "Title : ${vibrantSwatch.titleTextColor}"
+                                    "Title : ${vibrantSwatch.titleTextColor.convertToHexString()}"
                                 includeBinding.vibrantSwatchBodyTV.text =
-                                    "Body : ${vibrantSwatch.bodyTextColor}"
+                                    "Body : ${vibrantSwatch.bodyTextColor.convertToHexString()}"
 
                                 includeBinding.vibrantSwatchTitleTV.setTextColor(vibrantSwatch.titleTextColor)
                                 includeBinding.vibrantSwatchBodyTV.setTextColor(vibrantSwatch.bodyTextColor)
@@ -156,12 +156,12 @@ class MainActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
                             if (darkVibrantSwatch != null) {
 
                                 includeBinding.darkVibrantSwatch.text =
-                                    "Dark Vibrant Swatch : ${darkVibrantSwatch.rgb}"
+                                    "Dark Vibrant Swatch : ${darkVibrantSwatch.rgb.convertToHexString()}"
 
                                 includeBinding.darkVibrantTitleTV.text =
-                                    "Title : ${darkVibrantSwatch.titleTextColor}"
+                                    "Title : ${darkVibrantSwatch.titleTextColor.convertToHexString()}"
                                 includeBinding.darkVibrantBodyTextTV.text =
-                                    "Body : ${darkVibrantSwatch.bodyTextColor}"
+                                    "Body : ${darkVibrantSwatch.bodyTextColor.convertToHexString()}"
 
 
                                 includeBinding.darkVibrantSwatchCV.setCardBackgroundColor(
@@ -181,12 +181,12 @@ class MainActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
                             if (lightVibrantSwatch != null) {
 
                                 includeBinding.lightVibrantSwatch.text =
-                                    "Light Vibrant Swatch : ${lightVibrantSwatch.rgb}"
+                                    "Light Vibrant Swatch : ${lightVibrantSwatch.rgb.convertToHexString()}"
 
                                 includeBinding.lightVibrantSwatchTitleTV.text =
-                                    "Title : ${lightVibrantSwatch.titleTextColor}"
+                                    "Title : ${lightVibrantSwatch.titleTextColor.convertToHexString()}"
                                 includeBinding.lightVibrantSwatchBodyTextTV.text =
-                                    "Body : ${lightVibrantSwatch.bodyTextColor}"
+                                    "Body : ${lightVibrantSwatch.bodyTextColor.convertToHexString()}"
 
 
                                 includeBinding.lightVibrantSwatchCV.setCardBackgroundColor(
@@ -211,12 +211,12 @@ class MainActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
                             if (mutedSwatch != null) {
 
                                 includeBinding.mutedSwatch.text =
-                                    "Muted Swatch : ${mutedSwatch.rgb}"
+                                    "Muted Swatch : ${mutedSwatch.rgb.convertToHexString()}"
 
                                 includeBinding.mutedSwatchTitleTextTV.text =
-                                    "Title : ${mutedSwatch.titleTextColor}"
+                                    "Title : ${mutedSwatch.titleTextColor.convertToHexString()}"
                                 includeBinding.mutedSwatchBodyTextTV.text =
-                                    "Body : ${mutedSwatch.bodyTextColor}"
+                                    "Body : ${mutedSwatch.bodyTextColor.convertToHexString()}"
 
 
                                 includeBinding.mutedSwatchCV.setCardBackgroundColor(
@@ -236,12 +236,12 @@ class MainActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
                             if (lightMutedSwatch != null) {
 
                                 includeBinding.lightMutedSwatch.text =
-                                    "Light Muted Swatch : ${lightMutedSwatch.rgb}"
+                                    "Light Muted Swatch : ${lightMutedSwatch.rgb.convertToHexString()}"
 
                                 includeBinding.lightMutedSwatchTitleTextTV.text =
-                                    "Title : ${lightMutedSwatch.titleTextColor}"
+                                    "Title : ${lightMutedSwatch.titleTextColor.convertToHexString()}"
                                 includeBinding.lightMutedSwatchBodyTextTV.text =
-                                    "Body : ${lightMutedSwatch.bodyTextColor}"
+                                    "Body : ${lightMutedSwatch.bodyTextColor.convertToHexString()}"
 
 
                                 includeBinding.lightMutedSwatchCV.setCardBackgroundColor(
@@ -265,12 +265,12 @@ class MainActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
                             if (darkMutedSwatch != null) {
 
                                 includeBinding.darkMutedSwatch.text =
-                                    "Dark Muted Swatch : ${darkMutedSwatch.rgb}"
+                                    "Dark Muted Swatch : ${darkMutedSwatch.rgb.convertToHexString()}"
 
                                 includeBinding.darkMutedSwatchTitleTextTV.text =
-                                    "Title : ${darkMutedSwatch.titleTextColor}"
+                                    "Title : ${darkMutedSwatch.titleTextColor.convertToHexString()}"
                                 includeBinding.darkMutedSwatchBodyTextTV.text =
-                                    "Body : ${darkMutedSwatch.bodyTextColor}"
+                                    "Body : ${darkMutedSwatch.bodyTextColor.convertToHexString()}"
 
 
                                 includeBinding.darkMutedSwatchCV.setCardBackgroundColor(
@@ -301,6 +301,11 @@ class MainActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
                 })
 
         }
+    }
+
+    fun Int.convertToHexString(): String {
+
+        return java.lang.String.format("#%06X", 0xFFFFFFFF and this.toLong())
     }
 
 }
